@@ -54,7 +54,7 @@ public class Homework_1 {
     static int normalize(int angle) {
         int n = (angle % 360);
         if (n < 0) {
-            n = n + 360;
+            n += 360;
         }        
         return n;
     }
@@ -74,10 +74,8 @@ public class Homework_1 {
 
     // task 4
     static int fact(int n) {
-        if (n == 1) {
+        if ((n == 1) || (n == 2)) {
             return 1;
-        } else if (n == 0) {
-            return 0;
         } else {
             return n * fact(n - 1);
         }
@@ -85,12 +83,8 @@ public class Homework_1 {
 
     // task 5
     static BigInteger fact(BigInteger n) {
-        int comparevalue_1 = BigInteger.ONE.compareTo(n);
-        int comparevalue_0 = BigInteger.ZERO.compareTo(n);
-        if (comparevalue_1 == 0) {
+        if (BigInteger.ONE.compareTo(n) == 0 || BigInteger.ZERO.compareTo(n) == 0) {
             return BigInteger.ONE;
-        } else if (comparevalue_0 == 0) {
-            return BigInteger.ZERO;
         } else {
             return n.multiply(fact(n.subtract(BigInteger.ONE)));
         }
@@ -121,63 +115,75 @@ public class Homework_1 {
 
     // task 7
     static double average(int... nums) {
-        int l = nums.length;
-        double sm = 0;
-        for (int i = 0; i < l; i++) {
-            sm = sm + nums[i];
+        int len = nums.length;
+        if (len == 0) {
+            return 0;
+        } else {
+            double summ = 0;
+            for (int i = 0; i < len; i++) {
+                summ += nums[i];
+            }
+            return summ / len;
         }
-        return (sm / l);
     }
 
 
     // task 8
     static boolean isMagicSquare(int[][] square) {
-        int l = square.length;
-        int f = 0;
-        boolean status = true;
-        for (int i = 0; i < l; i++) {
-            int n = 0;
-            for (int j = 0; j < l; j++) {
-                n = n + square[i][j];
-                if (i == 0) {
-                    f = n;
+        int len = square.length;
+        if (len == 0) {
+            return true;
+        } else if (square.length != square[0].length) {
+            return false;
+        } else {
+            int firstsum = 0;
+            int summaindiagonal = 0;
+            int sumsidediagonal = 0;
+            boolean status = true;
+                for (int i = 0; i < len; i++) {
+                    int currentlineamount = 0;
+                    int currentrowamount = 0;
+                    summaindiagonal += square[i][i];
+                    sumsidediagonal += square[i][len - i - 1];
+                    for (int j = 0; j < len; j++) {
+                        if (i == 0) {
+                            firstsum += square[i][j];
+                        }
+                        currentlineamount += square[i][j];
+                        currentrowamount += square[j][i];
+                    }
+                    if ((currentlineamount != firstsum) || (currentrowamount != firstsum)) {
+                        status = false;
+                    }
                 }
-                if (n != f) {
+                if ((summaindiagonal != firstsum) || (sumsidediagonal != firstsum)) {
                     status = false;
                 }
-            }
+            return status;
         }
-        int n = 0;
-        int p = 0;
-        for (int i = 0; i < l; i++) {
-            n = n + square[i][i];
-            p = p + square[i][l-i-1];
-            if ((n != f) || (p != f)) {
-                    status = false;
-                }
-        }
-        return status;
     }
 
 
     // task 9
     static int[] reverse(int[] arr) {
-        int l = arr.length;
-        int[] arr1 = new int [l];
-        for (int i = (l - 1); i >= 0; i--) {
-            arr1[l - 1 - i] = arr[i];
+        int len = arr.length;
+        int empty = 0;
+        for (int i = 0; i < len / 2; i++) {
+            empty = arr[i];
+            arr[i] = arr[len - i - 1];
+            arr[len - i - 1] = empty;
         }
-        return arr1;
+        return arr;
     }
 
 
     // task 10
     static int[] sort(int[] arr) {
-        int l = arr.length;
+        int len = arr.length;
         int s = 0;
-        for (int i = 0; i < l; i++) {
-            for (int j = i; j < l-1; j++) {
-                if (arr[j] > arr[j+1]) {
+        for (int i = 0; i < len; i++) {
+            for (int j = i; j < len - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
                     s = arr[j];
                     arr[j] = arr[j + 1];
                     arr[j + 1] = s;
@@ -190,21 +196,21 @@ public class Homework_1 {
 
     // task 11
     static int[] removeExtra(int[] arr, int n) {
-        int l = arr.length;
-        int col = 0;
-        for (int i = 0; i < l; i++) {
+        int len = arr.length;
+        int quantity = 0;
+        for (int i = 0; i < len; i++) {
             if (arr[i] != n) {
-                col = col + 1;
+                quantity += 1;
             }
         }
-        int[] arr1 = new int[col];
-        int tek = 0;
-        for (int i = 0; i < l; i++) {
+        int[] newarr = new int[quantity];
+        int current = 0;
+        for (int i = 0; i < len; i++) {
             if (arr[i] != n) {
-                arr1[tek] = arr[i];
-                tek = tek + 1;
+                newarr[current] = arr[i];
+                current += 1;
             }
         }
-        return arr1;
+        return newarr;
     }
 }
