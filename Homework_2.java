@@ -4,12 +4,6 @@ public class Homework_2 {
         System.out.println(replace("Hello world!", "Hello", "Good bye"));
         System.out.println(format("Олегов", 9, "Введение в программирование на Java"));
         System.out.println(isPalindrome("А роза упала на лапу азора"));
-
-        Cat Murca = new Cat();
-        Dog Ben = new Dog();
-        Parrot Ivan = new Parrot();
-        Murca.say();
-        Ben.say();
         
 
     }
@@ -55,6 +49,34 @@ public class Homework_2 {
 
     // task 2
     // task 3
+    public final class Point {
+        private final double x;
+        private final double y;
+        public Point(double x, double y) {
+            this.x = x;
+            this.y = y;
+        }
+        public Point() {
+            this(0, 0);
+        }
+
+        public double getX() {
+            return x;
+        }
+    
+        public double getY() {
+            return y;
+        }
+        
+        public Point translate(double x, double y) {
+            return new Point(this.x + x, this.y + y);
+        }
+
+        public Point scale(double scale) {
+            return new Point(this.x * scale, this.y * scale);
+        }
+    }
+    
     // task 4
 
 
@@ -138,7 +160,33 @@ public class Homework_2 {
     // task 7
 
     // task 8
+    class Shape {
+        private double volume;
 
+        private void print() {
+        // your code
+        }
+    }
 
+    class Ball extends Shape {
+        private double radius;
+        // your code
+    }
+
+    class Cylinder extends Shape {
+       private double height;
+        // your code
+    }
+
+    class Pyramid extends Shape{
+        private double height;
+        private double area; // площадь основания
+        // your code
+    }
+
+    class ColourPyramid extends Pyramid{
+        private String colour;
+        // your code
+    }
 
 }
