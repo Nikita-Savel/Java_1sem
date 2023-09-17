@@ -21,42 +21,41 @@ public class Homework_1 {
 
     // task 1
     static void convert(int arg) {
-        int arg1 = arg;
-        int arg2 = arg;
-        String str1 = "";
+        int firstArg = arg;
+        int secondArg = arg;
+        String firstString = "";
         while (arg != 0) {
             if (arg % 16 >= 10) {
-                int m = 55 + arg % 16;
-                char c = (char) m;
-                str1 = str1 + c;
+                int index = 55 + arg % 16;
+                char letter = (char) index;
+                firstString += letter;
             } else {
-                str1 = str1 + Integer.toString(arg1 % 16);
+                firstString += firstArg % 16;
             }
-            arg = (arg / 16);
+            arg /= 16;
         }
-        str1 = str1 + " ";
-        while (arg1 != 0) {
-            str1 = str1 + Integer.toString(arg1 % 8);
-            arg1 = (arg1 / 8);
+        firstString += " ";
+        while (firstArg != 0) {
+            firstString += firstArg % 8;
+            firstArg /= 8;
         }
-        str1 = str1 + " ";
-        while (arg2 != 0) {
-            str1 = str1 + arg2 % 2;
-            arg2 = (arg2 / 2);
+        firstString += " ";
+        while (secondArg != 0) {
+            firstString += secondArg % 2;
+            secondArg /= 2;
         }
-        StringBuilder st = new StringBuilder(str1);
-        st.reverse();
-        System.out.println(st);
+        StringBuilder st = new StringBuilder(firstString);
+        System.out.println(st.reverse());
     }
 
 
     // task 2
     static int normalize(int angle) {
-        int n = (angle % 360);
-        if (n < 0) {
-            n += 360;
+        int module = (angle % 360);
+        if (module < 0) {
+            module += 360;
         }        
-        return n;
+        return module;
     }
 
 
@@ -74,7 +73,7 @@ public class Homework_1 {
 
     // task 4
     static int fact(int n) {
-        if ((n == 1) || (n == 2)) {
+        if ((n == 0) || (n == 1)) {
             return 1;
         } else {
             return n * fact(n - 1);
@@ -136,27 +135,27 @@ public class Homework_1 {
         } else if (square.length != square[0].length) {
             return false;
         } else {
-            int firstsum = 0;
-            int summaindiagonal = 0;
-            int sumsidediagonal = 0;
+            int firstSum = 0;
+            int sumMainDiagonal = 0;
+            int sumSideDiagonal = 0;
             boolean status = true;
                 for (int i = 0; i < len; i++) {
-                    int currentlineamount = 0;
-                    int currentrowamount = 0;
-                    summaindiagonal += square[i][i];
-                    sumsidediagonal += square[i][len - i - 1];
+                    int currentLineAmount = 0;
+                    int currentRowAmount = 0;
+                    sumMainDiagonal += square[i][i];
+                    sumSideDiagonal += square[i][len - i - 1];
                     for (int j = 0; j < len; j++) {
                         if (i == 0) {
-                            firstsum += square[i][j];
+                            firstSum += square[i][j];
                         }
-                        currentlineamount += square[i][j];
-                        currentrowamount += square[j][i];
+                        currentLineAmount += square[i][j];
+                        currentRowAmount += square[j][i];
                     }
-                    if ((currentlineamount != firstsum) || (currentrowamount != firstsum)) {
+                    if ((currentLineAmount != firstSum) || (currentRowAmount != firstSum)) {
                         status = false;
                     }
                 }
-                if ((summaindiagonal != firstsum) || (sumsidediagonal != firstsum)) {
+                if ((sumMainDiagonal != firstSum) || (sumSideDiagonal != firstSum)) {
                     status = false;
                 }
             return status;
@@ -167,11 +166,11 @@ public class Homework_1 {
     // task 9
     static int[] reverse(int[] arr) {
         int len = arr.length;
-        int empty = 0;
+        int tmp = 0;
         for (int i = 0; i < len / 2; i++) {
-            empty = arr[i];
+            tmp = arr[i];
             arr[i] = arr[len - i - 1];
-            arr[len - i - 1] = empty;
+            arr[len - i - 1] = tmp;
         }
         return arr;
     }
@@ -180,13 +179,13 @@ public class Homework_1 {
     // task 10
     static int[] sort(int[] arr) {
         int len = arr.length;
-        int s = 0;
-        for (int i = 0; i < len; i++) {
-            for (int j = i; j < len - 1; j++) {
+        int tmp = 0;
+        for (int i = len - 1; i >= 0; i--) {
+            for (int j = 0; j < i; j++) {
                 if (arr[j] > arr[j + 1]) {
-                    s = arr[j];
+                    tmp = arr[j];
                     arr[j] = arr[j + 1];
-                    arr[j + 1] = s;
+                    arr[j + 1] = tmp;
                 }
             }
         }
@@ -203,14 +202,14 @@ public class Homework_1 {
                 quantity += 1;
             }
         }
-        int[] newarr = new int[quantity];
+        int[] newArr = new int[quantity];
         int current = 0;
         for (int i = 0; i < len; i++) {
             if (arr[i] != n) {
-                newarr[current] = arr[i];
+                newArr[current] = arr[i];
                 current += 1;
             }
         }
-        return newarr;
+        return newArr;
     }
 }
