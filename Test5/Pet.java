@@ -11,8 +11,8 @@ public class Pet {
         this.owner = owner;
     }
     
-    public void sayHello() {
-        System.out.println("Hello, I am " + name + "!");
+    public String say() {
+        return "Hello, I am " + name + "!";
     }
     
     public String getName() {

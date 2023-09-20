@@ -10,13 +10,13 @@ public class Parrot extends Pet {
     }
 
     @Override
-    public void sayHello() {
-        System.out.println("Hello, I am parrot " + getName() + "!");
+    public String say() {
+        return"Hello, I am parrot " + getName() + "!";
     }
 
-    public void fly() {
+    public String fly() {
         int randomValue = 1 + (int) (Math.random() * (60));
-        System.out.println("Parrot " + getName() + " flew away but promised to return in " + randomValue + " minutes");
+        return "Parrot " + getName() + " flew away but promised to return in " + randomValue + " minutes";
     }
 
     

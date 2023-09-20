@@ -9,16 +9,16 @@ public class Dog extends Pet {
         this.TypeOfFeed = typeOfFeed;
     }
 
-    public void walk() {
-        System.out.println("The dog is walking with owner now");
+    public String walk() {
+        return "The dog is walking with owner now";
     }
     
-    public void walk(String name) {
-        System.out.println("The dog is walking with " + name + " now");
+    public String walk(String name) {
+        return "The dog is walking with " + name + " now";
     }
     @Override
-    public void sayHello() {
-        System.out.println("Hello, I am dog " + getName() + "!");
+    public String say() {
+        return "Hello, I am dog " + getName() + "!";
     }
 
 }
