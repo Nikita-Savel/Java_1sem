@@ -1,3 +1,4 @@
+package Test1;
 public class test1 {
     public static void main(String[] args) {
         System.out.println(equals("Привет", "привет"));
@@ -25,8 +26,7 @@ public class test1 {
     
     static String format(String surname, int mark, String subject) {
         // вернуть строку, используя форматирование: Студент [Фамилия] получил [оценка] по [предмету]
-        String str = "Cтудент" + " " + surname + " " + "получил" + " " + mark  + " " + "по" + " " + subject;
-        return str;
+        return String.format("Студент %s получил %d по %s", surname, mark, subject);
     }
     
     static boolean isPalindrome(String str) {
