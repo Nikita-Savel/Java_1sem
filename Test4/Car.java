@@ -48,7 +48,6 @@ public class Car {
         
     }
 
-
     public void Refill() {
         fuel = maxFuel;
         System.out.println("Заправлен полный бак.");
@@ -65,11 +64,14 @@ public class Car {
     }
 
     public void Info() {
+        int spacing = mileage - distance;
         System.out.println("Цвет: " + colour);
-        System.out.println("Модель: " + model);
-        System.out.println("Вместимость бензобака: " + maxFuel + " литров");
-        System.out.println("Расход топлива: " + engine.GetFuelConsumption()+ " литров на 100 км");
         System.out.println("Осталось топлива: " + fuel + " литров");
+        System.out.println("Вместимость бензобака: " + maxFuel + " литров");
+        System.out.println("Модель: " + model);
+        System.out.println("Расход топлива: " + engine.GetFuelConsumption()+ " литров на 100 км");
+        System.out.println("Автомобиль проехал " + mileage + " км. Из них с последнего запуска программы " + spacing + " км.");
+
     }
 
     public void StartEngine() {
