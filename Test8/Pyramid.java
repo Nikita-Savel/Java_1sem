@@ -4,14 +4,24 @@ class Pyramid extends Shape {
     private double area;
     
     public Pyramid(double height, double area) {
-        super();
-        this.height = height;
-        this.area = area;
+      super(height * area / 3.0);
+      this.height = height;
+      this.area = area;
     }
-    double volume = height * area / 3;
+
+    public double getHeight() {
+      return height;
+    }
+
+    public double getArea() {
+      return area;
+    }
 
     @Override 
-    void print() {
-      System.out.println("Это пирамида. Её объём равен " + volume + ". Её  высота равна " + height + ", а площадь основания " + area + " .");
+    public void print() {
+      System.out.println("Это пирамида");
+      System.out.println("Её высота равна: " + height);
+      System.out.println("Её площадь основания равна: " + area);
+      System.out.println("Её объём равен: " + getVolume());
     }
 }

@@ -1,13 +1,19 @@
 package Test7;
 
 public class test7 {
-
   public static void main(String[] args) {
-    Car myCar = new Car.Builder(96, "Audi")
-        .colour("Black")
-        .fuel(8)
-        .mileage(14)
+    Engine engine = new Engine();
+    engine.setFuelConsumption(10);
+
+    Car car = new Car.Builder()
+      .setColour("Red")
+        .setFuel(50)
+        .setMaxFuel(92)
+        .setModel("Audi")
+        .setEngine(engine)
+        .setMileage(10000)
         .build();
-    System.out.println(myCar);
+
+    car.info();
   }
 }

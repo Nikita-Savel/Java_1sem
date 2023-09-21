@@ -1,17 +1,19 @@
-/*package Test8;
+package Test8;
 final class ColourPyramid extends Pyramid {
-    private String colour;*/
+    private String colour;
 
 
-    /*public ColourPyramid(String colour) {
+    public ColourPyramid(double height, double area, String colour) {
         super(height, area);
         this.colour = colour;
     }
-    double volume = height * area / 3;
 
     @Override 
-    void print() {
-      System.out.println("Это цветная пирамида. Её объём равен " + volume + ". Её цвет " + colour + ". Её высота равна " + height + ", а площадь основания " + area + " .");
+    public void print() {
+      System.out.println("Это пирамида");
+      System.out.println("Её цвет" + colour);
+      System.out.println("Её высота равна: " + getHeight());
+      System.out.println("Её площадь основания равна: " + getArea());
+      System.out.println("Её объём равен: " + getVolume());
     }
-
-}*/
+}

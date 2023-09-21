@@ -65,7 +65,11 @@ public class Car {
     }
 
     public void Info() {
-        System.out.println("Это " + colour + " автомобиль модели " + model + ". Его вместимость бензобака составляет " + maxFuel + " литров. На данный момент расход топлива " + engine.GetFuelConsumption() + " литров на 100 км, а в баке осталось " + fuel + " литров топлива.");
+        System.out.println("Цвет: " + colour);
+        System.out.println("Модель: " + model);
+        System.out.println("Вместимость бензобака: " + maxFuel + " литров");
+        System.out.println("Расход топлива: " + engine.GetFuelConsumption()+ " литров на 100 км");
+        System.out.println("Осталось топлива: " + fuel + " литров");
     }
 
     public void StartEngine() {

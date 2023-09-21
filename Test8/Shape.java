@@ -3,7 +3,16 @@ public class Shape {
 
     private double volume;
 
-    void print() {
-        System.out.println("Это фигура. Объём равен 1.");
+    public Shape (double volume) {
+        this.volume = volume;
+    }
+
+    public double getVolume() {
+        return volume;
+    }
+
+    public void print() {
+        System.out.println("Это фигура");
+        System.out.println("Её объём равен: " + volume);
     }
 }
