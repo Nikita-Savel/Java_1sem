@@ -6,11 +6,11 @@ final class Cylinder extends Shape {
         super();
         this.height = height;
     }
-    double volume =  Math.PI * Math.pow(radius, 2) * height;
+    /*double volume =  Math.PI * Math.pow(radius, 2) * height;*/
 
-    @Override 
+    /*@Override 
     void print() {
         System.out.println("Это цилиндр. Его объём равен " + volume + ". Его  высота равна " + height + ", а площадь основания " + area + " .");
-    }
+    }*/
 
 }
