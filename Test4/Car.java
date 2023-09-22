@@ -63,6 +63,11 @@ public class Car {
         }
     }
 
+    public void GetDistance() {
+        int spacing = mileage - distance;
+        System.out.println("Автомобиль проехал " + mileage + " км. Из них с последнего запуска программы " + spacing + " км.");
+    }
+
     public void Info() {
         int spacing = mileage - distance;
         System.out.println("Цвет: " + colour);
@@ -94,8 +99,4 @@ public class Car {
         engine.TurnOff();
     }
 
-    public void GetDistance() {
-        int spacing = mileage - distance;
-        System.out.println("Автомобиль проехал " + mileage + " км. Из них с последнего запуска программы " + spacing + " км.");
-    }
 }

@@ -1,15 +1,14 @@
 package Test7;
 public class Car {
-
-
     private String colour;
-    private int fuel;
+    private static int fuel;
     private final int maxFuel;
     private final String model;
     private final Engine engine;
-    private int mileage;
+    private static int mileage;
+    private int distance;
 
-    public Car(Builder builder) {
+    private Car(Builder builder) {
         this.colour = builder.colour;
         this.fuel = builder.fuel;
         this.maxFuel = builder.maxFuel;
@@ -18,49 +17,80 @@ public class Car {
         this.mileage = builder.mileage;
     }
 
+    public void Refill() {
+        fuel = maxFuel;
+        System.out.println("Заправлен полный бак.");
+    }
+
+    public void Refill(int liter) {
+        if (fuel + liter > maxFuel) {
+            fuel = maxFuel;
+            System.out.println("Вы залили слишком много топлива. Заправлен полный бак.");
+        } else {
+            fuel += liter;
+            System.out.println("Заправлено " + liter + " литров топлива.");
+        }
+    }
+
+    public void Info() {
+        int spacing = mileage - distance;
+        System.out.println("Цвет: " + colour);
+        System.out.println("Осталось топлива: " + fuel + " литров");
+        System.out.println("Вместимость бензобака: " + maxFuel + " литров");
+        System.out.println("Модель: " + model);
+        System.out.println("Расход топлива: " + engine.GetFuelConsumption()+ " литров на 100 км");
+        System.out.println("Автомобиль проехал " + mileage + " км. Из них с последнего запуска программы " + spacing + " км.");
+    }
+
+    public void GetDistance() {
+        int spacing = mileage - distance;
+        System.out.println("Автомобиль проехал " + mileage + " км. Из них с последнего запуска программы " + spacing + " км.");
+    }
+
+
     public static class Builder {
         private String colour;
         private int fuel;
-        private int maxFuel;
-        private String model;
-        private Engine engine;
+        private final int maxFuel;
+        private final String model;
+        private final Engine engine;
         private int mileage;
-        public Builder colour(String val) {
-        colour = val;
-        return this;
+
+        public Builder(String model, int maxFuel, Engine engine) {
+            this.model = model;
+            this.maxFuel = maxFuel;
+            this.engine = engine;
+        }
+
+        public Builder SetColour(String colour) {
+            this.colour = colour;
+            return this;
+        }
+
+        public Builder SetFuel(int fuel) {
+            this.fuel = fuel;
+            return this;
+        }
+
+        public Builder SetMileage(int mileage) {
+            this.mileage = mileage;
+            return this;
+        }
+
+        public Car Build() {
+            return new Car(this);
+        }
     }
-    public Builder fuel(int setfuel) {
-        fuel = setfuel;
-        return this;
-    }
-    public Builder maxFuel(int setmaxFuel) {
-        maxFuel = setmaxFuel;
-        return this;
-    }
-    public Builder model(String setmodel) {
-        model = setmodel;
-        return this;
-    }
-    public Builder engine(Engine setengine) {
-        engine = setengine;
-        return this;
-    }
-    public Builder mileage(int setmileage) {
-        mileage = setmileage;
-        return this;
-    }
-    public Car build() {
-        return new Car(this);
-    }
-  }
 
 
-    private class Engine {
-        private boolean on;
+    public static class Engine {
         private int fuelConsumption;
+        private boolean on;
+
         public Engine(int fuelConsumption) {
             this.on = false;
             this.fuelConsumption = fuelConsumption;
+
         }
         public void TurnOn() {
             on = true;
@@ -73,7 +103,7 @@ public class Car {
         public void TurnOffWithoutPrint() {
             on = false;
         }
-        public int getFuelConsumption() {
+        public int GetFuelConsumption() {
             return fuelConsumption;
         }
         public boolean isOn() {
@@ -81,32 +111,11 @@ public class Car {
         }
     }
 
-
-    public void info() {
-        System.out.println("Colour: " + colour);
-        System.out.println("Fuel: " + fuel);
-        System.out.println("Max Fuel: " + maxFuel);
-        System.out.println("Model: " + model);
-        System.out.println("Engine: " + engine);
-        System.out.println("Mileage: " + mileage);
-    }
-    public void Refill() {
-        fuel = maxFuel;
-        System.out.println("Заправлен полный бак.");
-    }
-    public void Refill(int liter) {
-        if (fuel + liter > maxFuel) {
-        fuel = maxFuel;
-        System.out.println("Вы залили слишком много топлива. Заправлен полный бак.");
-        } else {
-        fuel += liter;
-        System.out.println("Заправлено " + liter + " литров топлива.");
-        }
-    }
+    
     public void StartEngine() {
         engine.TurnOn();
         while (engine.isOn()) {
-        int fuelConsumption = engine.getFuelConsumption();
+            int fuelConsumption = engine.GetFuelConsumption();
             if (fuel >= fuelConsumption) {
                 mileage += 100;
                 fuel -= fuelConsumption;
