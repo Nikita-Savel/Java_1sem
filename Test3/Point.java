@@ -13,19 +13,19 @@ public final class Point {
         this.y = 0;
     }
     
-    public double GetX() {
+    public double getX() {
         return x;
     }
         
-    public double GetY() {
+    public double getY() {
         return y;
     }
             
-    public Point Translate(double x0, double y0) {
+    public Point translate(double x0, double y0) {
         return new Point(x + x0, y + y0);
     }
     
-    public Point Scale(double scale) {
+    public Point scale(double scale) {
         return new Point(x + scale, y + scale);
     }
 

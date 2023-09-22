@@ -3,11 +3,11 @@ public class test2 {
     public static void main(String[] args) {
         IntHolder myFirstIntHolder = new IntHolder(34);
         IntHolder mySecondIntHolder = new IntHolder(56);
-        IntHolder sum = myFirstIntHolder.Summation(mySecondIntHolder);
-        IntHolder dif = myFirstIntHolder.Difference(mySecondIntHolder);
-        IntHolder comp = myFirstIntHolder.Composition(mySecondIntHolder);
-        IntHolder div = myFirstIntHolder.IntegerDivision(mySecondIntHolder);
-        IntHolder mod = myFirstIntHolder.DivisionWithRemainder(mySecondIntHolder);
+        IntHolder sum = myFirstIntHolder.summation(mySecondIntHolder);
+        IntHolder dif = myFirstIntHolder.difference(mySecondIntHolder);
+        IntHolder comp = myFirstIntHolder.composition(mySecondIntHolder);
+        IntHolder div = myFirstIntHolder.integerDivision(mySecondIntHolder);
+        IntHolder mod = myFirstIntHolder.divisionWithRemainder(mySecondIntHolder);
 
 
         System.out.println("Сумма: " + sum.getValue());

@@ -17,18 +17,18 @@ public class Car {
             this.on = false;
             this.fuelConsumption = fuelConsumption;
         }
-        public void TurnOn() {
+        public void turnOn() {
             on = true;
             System.out.println("Двигатель запущен.");
         }
-        public void TurnOff() {
+        public void turnOff() {
             on = false;
             System.out.println("Двигатель остановлен.");
         }
-        public void TurnOffWithoutPrint() {
+        public void turnOffWithoutPrint() {
             on = false;
         }
-        public int GetFuelConsumption() {
+        public int getFuelConsumption() {
             return fuelConsumption;
         }
         public boolean isOn() {
@@ -48,12 +48,12 @@ public class Car {
         
     }
 
-    public void Refill() {
+    public void refill() {
         fuel = maxFuel;
         System.out.println("Заправлен полный бак.");
     }
 
-    public void Refill(int liter) {
+    public void refill(int liter) {
         if (fuel + liter > maxFuel) {
             fuel = maxFuel;
             System.out.println("Вы залили слишком много топлива. Заправлен полный бак.");
@@ -63,40 +63,40 @@ public class Car {
         }
     }
 
-    public void GetDistance() {
+    public void getDistance() {
         int spacing = mileage - distance;
         System.out.println("Автомобиль проехал " + mileage + " км. Из них с последнего запуска программы " + spacing + " км.");
     }
 
-    public void Info() {
+    public void info() {
         int spacing = mileage - distance;
         System.out.println("Цвет: " + colour);
         System.out.println("Осталось топлива: " + fuel + " литров");
         System.out.println("Вместимость бензобака: " + maxFuel + " литров");
         System.out.println("Модель: " + model);
-        System.out.println("Расход топлива: " + engine.GetFuelConsumption()+ " литров на 100 км");
+        System.out.println("Расход топлива: " + engine.getFuelConsumption()+ " литров на 100 км");
         System.out.println("Автомобиль проехал " + mileage + " км. Из них с последнего запуска программы " + spacing + " км.");
 
     }
 
-    public void StartEngine() {
-        engine.TurnOn();
+    public void startEngine() {
+        engine.turnOn();
         while (engine.isOn()) {
-            int fuelConsumption = engine.GetFuelConsumption();
+            int fuelConsumption = engine.getFuelConsumption();
             if (fuel >= fuelConsumption) {
                 mileage += 100;
                 fuel -= fuelConsumption;
             } else {
                 mileage += (fuel % fuelConsumption) * 100 / 7;
                 fuel = 0;
-                engine.TurnOffWithoutPrint();
+                engine.turnOffWithoutPrint();
                 System.out.println("Требуется дозаправка. Двигатель остановлен.");
             }
         }
     }
 
-    public void StopEngine() {
-        engine.TurnOff();
+    public void stopEngine() {
+        engine.turnOff();
     }
 
 }

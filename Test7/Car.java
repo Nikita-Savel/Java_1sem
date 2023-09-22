@@ -17,12 +17,12 @@ public class Car {
         this.mileage = builder.mileage;
     }
 
-    public void Refill() {
+    public void refill() {
         fuel = maxFuel;
         System.out.println("Заправлен полный бак.");
     }
 
-    public void Refill(int liter) {
+    public void refill(int liter) {
         if (fuel + liter > maxFuel) {
             fuel = maxFuel;
             System.out.println("Вы залили слишком много топлива. Заправлен полный бак.");
@@ -32,17 +32,17 @@ public class Car {
         }
     }
 
-    public void Info() {
+    public void info() {
         int spacing = mileage - distance;
         System.out.println("Цвет: " + colour);
         System.out.println("Осталось топлива: " + fuel + " литров");
         System.out.println("Вместимость бензобака: " + maxFuel + " литров");
         System.out.println("Модель: " + model);
-        System.out.println("Расход топлива: " + engine.GetFuelConsumption()+ " литров на 100 км");
+        System.out.println("Расход топлива: " + engine.getFuelConsumption()+ " литров на 100 км");
         System.out.println("Автомобиль проехал " + mileage + " км. Из них с последнего запуска программы " + spacing + " км.");
     }
 
-    public void GetDistance() {
+    public void getDistance() {
         int spacing = mileage - distance;
         System.out.println("Автомобиль проехал " + mileage + " км. Из них с последнего запуска программы " + spacing + " км.");
     }
@@ -62,22 +62,22 @@ public class Car {
             this.engine = engine;
         }
 
-        public Builder SetColour(String colour) {
+        public Builder setColour(String colour) {
             this.colour = colour;
             return this;
         }
 
-        public Builder SetFuel(int fuel) {
+        public Builder setFuel(int fuel) {
             this.fuel = fuel;
             return this;
         }
 
-        public Builder SetMileage(int mileage) {
+        public Builder setMileage(int mileage) {
             this.mileage = mileage;
             return this;
         }
 
-        public Car Build() {
+        public Car build() {
             return new Car(this);
         }
     }
@@ -92,18 +92,18 @@ public class Car {
             this.fuelConsumption = fuelConsumption;
 
         }
-        public void TurnOn() {
+        public void turnOn() {
             on = true;
             System.out.println("Двигатель запущен.");
         }
-        public void TurnOff() {
+        public void turnOff() {
             on = false;
             System.out.println("Двигатель остановлен.");
         }
-        public void TurnOffWithoutPrint() {
+        public void turnOffWithoutPrint() {
             on = false;
         }
-        public int GetFuelConsumption() {
+        public int getFuelConsumption() {
             return fuelConsumption;
         }
         public boolean isOn() {
@@ -112,22 +112,22 @@ public class Car {
     }
 
     
-    public void StartEngine() {
-        engine.TurnOn();
+    public void startEngine() {
+        engine.turnOn();
         while (engine.isOn()) {
-            int fuelConsumption = engine.GetFuelConsumption();
+            int fuelConsumption = engine.getFuelConsumption();
             if (fuel >= fuelConsumption) {
                 mileage += 100;
                 fuel -= fuelConsumption;
             } else {
                 mileage += (fuel % fuelConsumption) * 100 / 7;
                 fuel = 0;
-                engine.TurnOffWithoutPrint();
+                engine.turnOffWithoutPrint();
                 System.out.println("Требуется дозаправка. Двигатель остановлен.");
             }
         }
     }
-    public void StopEngine() {
-        engine.TurnOff();
+    public void stopEngine() {
+        engine.turnOff();
     }
 }

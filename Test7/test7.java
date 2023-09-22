@@ -6,15 +6,15 @@ public class test7 {
     public static void main(String[] args) {
         Engine engine = new Engine(5);
         Car myCar = new Car.Builder("Audi", 79, engine)
-            .SetColour("Grey")
-            .SetFuel(50)
-            .SetMileage(2636)
-            .Build();
+            .setColour("Grey")
+            .setFuel(50)
+            .setMileage(2636)
+            .build();
 
-        myCar.Refill(17);
-        myCar.GetDistance();
-        myCar.Info();
-        myCar.StartEngine();
-        myCar.GetDistance();
+        myCar.refill(17);
+        myCar.getDistance();
+        myCar.info();
+        myCar.startEngine();
+        myCar.getDistance();
     }
 }

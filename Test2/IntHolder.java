@@ -17,23 +17,23 @@ public class IntHolder {
         firstNum.value = tmp;
     }
 
-    public IntHolder Summation(IntHolder other) {
+    public IntHolder summation(IntHolder other) {
         return new IntHolder(value + other.value);
     }
 
-    public IntHolder Difference(IntHolder other) {
+    public IntHolder difference(IntHolder other) {
         return new IntHolder(value - other.value);
     }
 
-    public IntHolder Composition(IntHolder other) {
+    public IntHolder composition(IntHolder other) {
         return new IntHolder(value * other.value);
     }
 
-    public IntHolder IntegerDivision(IntHolder other) {
+    public IntHolder integerDivision(IntHolder other) {
         return new IntHolder(value / other.value);
     }
 
-    public IntHolder DivisionWithRemainder(IntHolder other) {
+    public IntHolder divisionWithRemainder(IntHolder other) {
         return new IntHolder(value % other.value);
     }
 
