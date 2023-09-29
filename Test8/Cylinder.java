@@ -1,5 +1,5 @@
 package Test8;
-final class Cylinder extends Shape {
+non-sealed class Cylinder extends Shape {
     private double height;
 
     public Cylinder(double volume, double height) {

@@ -6,7 +6,7 @@ public class Car {
     private final String model;
     private final Engine engine;
     private static int mileage;
-    private int distance;
+    private static int distance;
 
     private Car(Builder builder) {
         this.colour = builder.colour;
@@ -15,6 +15,7 @@ public class Car {
         this.model = builder.model;
         this.engine = builder.engine;
         this.mileage = builder.mileage;
+        this.distance = builder.mileage;
     }
 
     public void refill() {
@@ -84,6 +85,7 @@ public class Car {
 
 
     public static class Engine {
+        
         private int fuelConsumption;
         private boolean on;
 
@@ -120,7 +122,7 @@ public class Car {
                 mileage += 100;
                 fuel -= fuelConsumption;
             } else {
-                mileage += (fuel % fuelConsumption) * 100 / 7;
+                mileage += fuel * 100 / fuelConsumption;
                 fuel = 0;
                 engine.turnOffWithoutPrint();
                 System.out.println("Требуется дозаправка. Двигатель остановлен.");

@@ -20,8 +20,3 @@ public class Pet {
     }
 
 }
-
-enum TypeOfFeed {
-    CHEAP,
-    EXPENSIVE
-}

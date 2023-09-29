@@ -1,5 +1,5 @@
 package Test8;
-public class test8 {
+public class Test8 {
     public static void main(String[] args) {
         Shape myShape = new Shape(12.399);
         myShape.print();

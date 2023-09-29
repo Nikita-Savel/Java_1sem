@@ -1,5 +1,5 @@
 package Test8;
-class Pyramid extends Shape {
+non-sealed class Pyramid extends Shape {
     private double height;
     private double area;
     

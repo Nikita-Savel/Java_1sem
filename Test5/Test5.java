@@ -1,4 +1,4 @@
-public class test5 {
+public class Test5 {
     public static void main(String[] args) {
         
         Cat myCat = new Cat("Murca", 9, 3, "Tom", "Abyssinian cat", TypeOfFeed.CHEAP);
@@ -26,5 +26,4 @@ public class test5 {
 
         }
     }
-
 }

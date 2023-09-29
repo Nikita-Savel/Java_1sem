@@ -1,11 +1,17 @@
 package Test2;
 import java.util.Objects;
 public class IntHolder {
+
     private int value;
 
-    public IntHolder(int value) {
-        this.value = value;
+    public static IntHolder creation (int value) {
+        return new IntHolder(value);
     }
+
+    public IntHolder(int value) {
+            this.value = value;
+    }
+    
 
     public int getValue() {
         return value;
@@ -17,24 +23,24 @@ public class IntHolder {
         firstNum.value = tmp;
     }
 
-    public IntHolder summation(IntHolder other) {
-        return new IntHolder(value + other.value);
+    public static void summation(IntHolder argument, IntHolder other) {
+        argument.value += other.value;
     }
 
-    public IntHolder difference(IntHolder other) {
-        return new IntHolder(value - other.value);
+    public static void difference(IntHolder argument, IntHolder other) {
+        argument.value -= other.value;
     }
 
-    public IntHolder composition(IntHolder other) {
-        return new IntHolder(value * other.value);
+    public static void composition(IntHolder argument, IntHolder other) {
+        argument.value *= other.value;
     }
 
-    public IntHolder integerDivision(IntHolder other) {
-        return new IntHolder(value / other.value);
+    public static void integerDivision(IntHolder argument, IntHolder other) {
+        argument.value += other.value;
     }
 
-    public IntHolder divisionWithRemainder(IntHolder other) {
-        return new IntHolder(value % other.value);
+    public static void divisionWithRemainder(IntHolder argument, IntHolder other) {
+        argument.value += other.value;
     }
 
 

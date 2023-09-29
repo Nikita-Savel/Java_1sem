@@ -1,5 +1,5 @@
 package Test1;
-public class test1 {
+public class Test1 {
     public static void main(String[] args) {
         System.out.println(equals("Привет", "привет"));
         System.out.println(replace("Hello world!", "Hello", "Good bye"));
@@ -11,10 +11,7 @@ public class test1 {
 
     static boolean equals(String firstString, String secondString) {
         // проверить, что строки совпадают без учета регистра
-        if (firstString.toLowerCase().equals(secondString.toLowerCase())) {
-            return true;
-        }
-        return false;
+        return firstString.toLowerCase().equals(secondString.toLowerCase());
     }
     
     static String replace(String str, String oldStr, String newStr) {

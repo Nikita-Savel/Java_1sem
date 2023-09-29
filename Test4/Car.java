@@ -87,7 +87,7 @@ public class Car {
                 mileage += 100;
                 fuel -= fuelConsumption;
             } else {
-                mileage += (fuel % fuelConsumption) * 100 / 7;
+                mileage += fuel * 100 / fuelConsumption;
                 fuel = 0;
                 engine.turnOffWithoutPrint();
                 System.out.println("Требуется дозаправка. Двигатель остановлен.");

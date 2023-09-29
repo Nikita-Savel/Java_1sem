@@ -1,7 +1,7 @@
 package Test3;
 public final class Point {
-    private double x;
-    private double y;
+    private final double x;
+    private final double y;
 
     public Point(double x, double y) {
         this.x = x;
@@ -26,7 +26,7 @@ public final class Point {
     }
     
     public Point scale(double scale) {
-        return new Point(x + scale, y + scale);
+        return new Point(x * scale, y * scale);
     }
 
     @Override

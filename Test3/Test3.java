@@ -1,5 +1,5 @@
 package Test3;
-public class test3 {
+public class Test3 {
     public static void main(String[] args) {
         Point myPoint = new Point(2, 4);
 

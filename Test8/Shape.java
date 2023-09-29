@@ -1,5 +1,5 @@
 package Test8;
-public class Shape {
+public sealed class Shape permits Ball, Cylinder, Pyramid {
 
     private double volume;
 

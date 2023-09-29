@@ -2,7 +2,7 @@ package Test7;
 
 import Test7.Car.Engine;
 
-public class test7 {
+public class Test7 {
     public static void main(String[] args) {
         Engine engine = new Engine(5);
         Car myCar = new Car.Builder("Audi", 79, engine)

@@ -1,5 +1,5 @@
 package Test6;
-public class test6 {
+public class Test6 {
     public static void main(String[] args) {
         Contact myIvan= new Contact("Иван", "ivan@gmail.com");
         myIvan.sayHello();
