@@ -5,9 +5,7 @@ public class Test3 {
     }
 
     public static void lambda() {
-        Printable Printable = () -> {
-            System.out.println("Hello, world!");
-        };
+        Printable Printable = () -> System.out.println("Hello, world!");
         Printable.print();
     }
 
