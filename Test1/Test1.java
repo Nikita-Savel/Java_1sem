@@ -18,7 +18,9 @@ public class Test1 {
 
         static IntSequence of(int... values) {
             return new IntSequence() {
+
                 int index = 0;
+                
                 @Override
                 public int next() {
                     try {
