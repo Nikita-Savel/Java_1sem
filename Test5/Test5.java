@@ -14,22 +14,22 @@ public class Test5 {
 
     public static boolean validate(String login, String password, String confirmPassword) throws WrongLoginException, WrongPasswordException {
         
-        boolean loginResult = false;
+        boolean loginResult = true;
         for (int i = 0; i < login.length(); i++) {
             if (!(((int) login.charAt(i) >= 48 && (int) login.charAt(i) <= 57) || ((int) login.charAt(i) >= 65 && (int) login.charAt(i) <= 90) || ((int) login.charAt(i) >= 97 && (int) login.charAt(i) <= 122) || ((int) login.charAt(i) == 95))) {
-                loginResult = true;
+                loginResult = false;
             }
         }
-        if (login.length() >= 20 || loginResult) {
+        if (login.length() >= 20 || !loginResult) {
             throw new WrongLoginException("Неверный логин");
         }
-        boolean passwordResult = false;
+        boolean passwordResult = true;
         for (int i = 0; i < password.length(); i++) {
             if (!(((int) password.charAt(i) >= 48 && (int) password.charAt(i) <= 57) || ((int) password.charAt(i) >= 65 && (int) password.charAt(i) <= 90) || ((int) password.charAt(i) >= 97 && (int) password.charAt(i) <= 122) || ((int) password.charAt(i) == 95))) {
-                passwordResult = true;
+                passwordResult = false;
             }
         }
-        if (password.length() >= 20 || !password.equals(confirmPassword) || passwordResult) {
+        if (password.length() >= 20 || !password.equals(confirmPassword) || !passwordResult) {
             throw new WrongPasswordException("Неверный пароль");
         }
         return true;
