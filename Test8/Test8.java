@@ -15,8 +15,5 @@ public class Test8 {
         System.out.println();
         ColourPyramid myColourPyramid = new ColourPyramid(18.99, 0.22, "Grey");
         myColourPyramid.print();
-
-        /*ColourPyramid myColourPyramid = new ColourPyramid("жёлтый");
-        myColourPyramid.print();*/
     }
 }

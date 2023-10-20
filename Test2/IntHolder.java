@@ -4,7 +4,7 @@ public class IntHolder {
 
     private int value;
 
-    public static IntHolder creation (int value) {
+    public static IntHolder of(int value) {
         return new IntHolder(value);
     }
 
@@ -23,23 +23,23 @@ public class IntHolder {
         firstNum.value = tmp;
     }
 
-    public static void summation(IntHolder argument, IntHolder other) {
+    public static void sum(IntHolder argument, IntHolder other) {
         argument.value += other.value;
     }
 
-    public static void difference(IntHolder argument, IntHolder other) {
+    public static void dif(IntHolder argument, IntHolder other) {
         argument.value -= other.value;
     }
 
-    public static void composition(IntHolder argument, IntHolder other) {
+    public static void multiply(IntHolder argument, IntHolder other) {
         argument.value *= other.value;
     }
 
-    public static void integerDivision(IntHolder argument, IntHolder other) {
+    public static void div(IntHolder argument, IntHolder other) {
         argument.value += other.value;
     }
 
-    public static void divisionWithRemainder(IntHolder argument, IntHolder other) {
+    public static void mod(IntHolder argument, IntHolder other) {
         argument.value += other.value;
     }
 

@@ -12,11 +12,11 @@ public class Test2 {
         IntHolder myNinethIntHolder = new IntHolder(19);
         IntHolder myTenthIntHolder = new IntHolder(12);
 
-        myFirstIntHolder.summation(myFirstIntHolder, mySecondIntHolder);
-        myThirdIntHolder.difference(myThirdIntHolder, myFourthIntHolder);
-        myFifthIntHolder.composition(myFifthIntHolder, mySixthIntHolder);
-        mySeventhIntHolder.integerDivision(mySeventhIntHolder, myEighthIntHolder);
-        myNinethIntHolder.divisionWithRemainder(myNinethIntHolder, myTenthIntHolder);
+        myFirstIntHolder.sum(myFirstIntHolder, mySecondIntHolder);
+        myThirdIntHolder.dif(myThirdIntHolder, myFourthIntHolder);
+        myFifthIntHolder.multiply(myFifthIntHolder, mySixthIntHolder);
+        mySeventhIntHolder.div(mySeventhIntHolder, myEighthIntHolder);
+        myNinethIntHolder.mod(myNinethIntHolder, myTenthIntHolder);
 
 
         System.out.println("Сумма: " + myFirstIntHolder.getValue());

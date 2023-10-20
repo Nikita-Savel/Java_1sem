@@ -1,12 +1,12 @@
 public class Parrot extends Pet {
 
     private final String country;
-    private boolean documents;
+    private boolean hasDocs;
 
-    public Parrot(String name, int weight, int age, String owner, String country, boolean documents) {
+    public Parrot(String name, int weight, int age, String owner, String country, boolean hasDocs) {
         super(name, weight, age, owner);
         this.country = country;
-        this.documents = documents;
+        this.hasDocs = hasDocs;
     }
 
     @Override

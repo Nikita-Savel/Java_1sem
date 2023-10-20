@@ -84,7 +84,7 @@ public class Car {
     }
 
 
-    public static class Engine {
+    public class Engine {
         
         private int fuelConsumption;
         private boolean on;
