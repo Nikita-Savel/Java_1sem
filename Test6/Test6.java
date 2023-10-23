@@ -1,6 +1,9 @@
 package Test6;
+
+import java.io.IOException;
+
 public class Test6 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         try {
             int a = 90;
             int b = 3;
