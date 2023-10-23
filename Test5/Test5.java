@@ -16,7 +16,7 @@ public class Test5 {
         
         boolean loginResult = true;
         for (int i = 0; i < login.length(); i++) {
-            if (!(((int) login.charAt(i) >= 48 && (int) login.charAt(i) <= 57) || ((int) login.charAt(i) >= 65 && (int) login.charAt(i) <= 90) || ((int) login.charAt(i) >= 97 && (int) login.charAt(i) <= 122) || ((int) login.charAt(i) == 95))) {
+            if (!((login.charAt(i) >= 48 && login.charAt(i) <= 57) || (login.charAt(i) >= 65 && login.charAt(i) <= 90) || (login.charAt(i) >= 97 && login.charAt(i) <= 122) || (login.charAt(i) == 95))) {
                 loginResult = false;
             }
         }
@@ -25,7 +25,7 @@ public class Test5 {
         }
         boolean passwordResult = true;
         for (int i = 0; i < password.length(); i++) {
-            if (!(((int) password.charAt(i) >= 48 && (int) password.charAt(i) <= 57) || ((int) password.charAt(i) >= 65 && (int) password.charAt(i) <= 90) || ((int) password.charAt(i) >= 97 && (int) password.charAt(i) <= 122) || ((int) password.charAt(i) == 95))) {
+            if (!((password.charAt(i) >= 48 && password.charAt(i) <= 57) || (password.charAt(i) >= 65 && password.charAt(i) <= 90) || (password.charAt(i) >= 97 && password.charAt(i) <= 122) || (password.charAt(i) == 95))) {
                 passwordResult = false;
             }
         }
