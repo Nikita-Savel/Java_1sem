@@ -19,7 +19,7 @@ public class Test6 {
         }
     }
 
-    public static void printSum(Integer a, Integer b) throws NullPointerException {
+    public static void printSum(int a, int b) throws NullPointerException {
         System.out.println(a + b);
     }
 }
