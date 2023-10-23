@@ -2,20 +2,25 @@ package Test4;
 
 public class Test4 {
     public static void main(String[] args) throws Exception {
+        lambda();
+    }
+
+    static void lambda() {
         MyInterface MyInterface = (n) -> {
             if (n > 0) {
-                return "Положительное число";
+                System.out.println("Положительное число");
             } else if (n < 0) {
-                return "Отрицательное число";
+                System.out.println("Отрицательное число");
             } else {
-                return "Ноль";
+                System.out.println("Ноль");
             }
         };
-        System.out.println(MyInterface.numberSign(45));
+        MyInterface.numberSign(45);
+        
     }
 
     @FunctionalInterface
     interface MyInterface {
-        String numberSign(int n);
+        void numberSign(int n);
     }
 }

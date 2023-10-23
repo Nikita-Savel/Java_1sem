@@ -4,9 +4,9 @@ public class Test3 {
         lambda();
     }
 
-    public static void lambda() {
-        Printable Printable = () -> System.out.println("Hello, world!");
-        Printable.print();
+    static void lambda() {
+        Printable printable = () -> System.out.println("Hello, world!");
+        printable.print();
     }
 
     @FunctionalInterface
