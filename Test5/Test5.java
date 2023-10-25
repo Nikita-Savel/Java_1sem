@@ -13,7 +13,7 @@ public class Test5 {
     
 
     public static boolean validate(String login, String password, String confirmPassword) throws WrongLoginException, WrongPasswordException {
-        
+
         boolean loginResult = true;
         for (int i = 0; i < login.length(); i++) {
             if (!((login.charAt(i) >= 48 && login.charAt(i) <= 57) || (login.charAt(i) >= 65 && login.charAt(i) <= 90) || (login.charAt(i) >= 97 && login.charAt(i) <= 122) || (login.charAt(i) == 95))) {
