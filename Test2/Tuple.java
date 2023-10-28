@@ -40,7 +40,6 @@ public class Tuple<T> {
                 break;
             }
         }
-        if 
     }
 
     public boolean isEmpty() {
@@ -48,7 +47,7 @@ public class Tuple<T> {
     }
 
     public void orElse(int i, T f) {
-
+        
     }
 }
 
