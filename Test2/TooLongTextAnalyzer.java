@@ -2,7 +2,7 @@ package Test2;
 
 public class TooLongTextAnalyzer implements TextAnalyzer {
 
-    public int maxLength;
+    int maxLength;
     public TooLongTextAnalyzer(int maxLength) {
         this.maxLength = maxLength;
     }

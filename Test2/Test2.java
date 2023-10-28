@@ -2,16 +2,12 @@ package Test2;
 public class Test2 {
     public static void main(String[] args) {
         TextAnalyzer[] analyzers = {
-                new SpamAnalyzer(new String[]{"spam"}),
+                new SpamAnalyzer(new String[]{"купи"}),
                 new NegativeTextAnalyzer(),
-                new TooLongTextAnalyzer(10)
+                new TooLongTextAnalyzer(20)
         };
         
-        String[] comments = {
-                "This is a spam comment!",
-                "This comment is negative :( ",
-                "This comment is too long"
-        };
+        String[] comments = {"Быстро купи эту машину", "Много негатива :( ", "Это очень длинный комментарий"};
         
         for (String comment : comments) {
             Label label = checkLabels(analyzers, comment);
