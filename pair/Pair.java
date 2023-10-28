@@ -1,4 +1,5 @@
-package Test3;
+package pair;
+
 public class Pair<L, R> {
   private L left;
   private R right;

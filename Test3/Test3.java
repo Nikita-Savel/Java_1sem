@@ -1,21 +1,10 @@
 package Test3;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
-
 public class Test3 {
 
   public static void main(String[] args) {
-    Pair<Integer, Integer> p = new Pair<>(1, 2);
-    Pair<Integer, String> pair = new Pair<>(100, "Name");
-    String name = pair.getRight();
-    print(Arrays.asList(1, 2, 3));
+    Pairss<Integer> myPair = new Pairss<>(1, 2);
+    Integer name = myPair.getRight();
+    System.out.println(name);
   }
-
-  public static <T> void print(List<T> list) {
-    T param;
-  }
-
 }
