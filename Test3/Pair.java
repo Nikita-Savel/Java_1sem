@@ -1,10 +1,9 @@
 package Test3;
+class Pair<T extends Comparable<T>> {
+  public T left;
+  public T right;
 
-class Pairss<T extends Comparable<T>> {
-  private T left;
-  private T right;
-
-  public Pairss(T left, T right) {
+  public Pair(T left, T right) {
     this.left = left;
     this.right = right;
   }
@@ -28,8 +27,6 @@ class Pairss<T extends Comparable<T>> {
   public T min() {
     if (check() > 0) {
       return right;
-    } else if (check() < 0){
-      return left;
     } else {
       return left;
     }
@@ -37,8 +34,6 @@ class Pairss<T extends Comparable<T>> {
 
   public T max() {
     if (check() > 0) {
-      return left;
-    } else if (check() < 0){
       return left;
     } else {
       return right;
