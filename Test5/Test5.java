@@ -12,7 +12,6 @@ public class Test5 {
         }
     }
     
-
     public static boolean validate(String login, String password, String confirmPassword) throws WrongLoginException, WrongPasswordException {
 
         boolean loginResult = true;
