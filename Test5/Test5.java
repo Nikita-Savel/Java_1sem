@@ -8,6 +8,7 @@ public class Test5 {
             System.out.println(status);
         } catch (WrongLoginException | WrongPasswordException e) {
             System.out.println(e);
+            System.out.println(false);
         }
     }
     
