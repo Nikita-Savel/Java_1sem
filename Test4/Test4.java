@@ -1,4 +1,3 @@
-package Test4;
 public class Test4 {
     public static void main(String[] args) {
         Integer[] firstArr = {1, 4, 32, 45, 213};

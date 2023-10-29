@@ -1,4 +1,3 @@
-package Test4;
 public class Pair<T> {
   public T left;
   public T right;
