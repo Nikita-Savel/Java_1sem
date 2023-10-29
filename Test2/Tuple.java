@@ -3,6 +3,8 @@ package Test2;
 public class Tuple<T> {
     public T[] elements;
     public int len = 0;
+    String firstMessage = ": Неподходящий index";
+    String secondMessage = ": Кортеж уже заполнен";
     
     @SuppressWarnings("unchecked")
     public Tuple(int capacity) {
@@ -10,27 +12,54 @@ public class Tuple<T> {
 
     }
 
-     public T get(int index) {
-        return elements[index];
+    public T get(int index) {
+        try {
+            return elements[index];
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println(e + firstMessage);
+            return null;
+        }
+    }
+
+    public int getLen() {
+        return len;
     }
 
     public void add(T el) {
-        this.elements[len] = el;
-        len++;
+        try {
+            this.elements[len] = el;
+            len++;
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println(e + secondMessage);
+        }
     }
 
     public void add(T el, int index) {
-        if (this.elements[index] == null) {
-            len++;
+        try {
+            if (this.elements[index] == null) {
+                this.elements[len] = el;
+                len++;
+            } else {
+                this.elements[index] = el;
+            }
+        } catch (IndexOutOfBoundsException e){
+            System.out.println(e + firstMessage);
         }
-        this.elements[index] = el;
     }
 
     public void remove(int index) {
-        for (int i = index + 1; i < len; i++) {
-            elements[i - 1] = elements[i];
+        try {
+            T tmp = elements[index];
+            for (int i = index + 1; i < len; i++) {
+                elements[i - 1] = elements[i];
+            }
+            len--;
+            elements[len] = null;
+            
+            
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println(e + firstMessage);
         }
-        len--;
     }
 
     public void remove(T el) {
@@ -46,23 +75,19 @@ public class Tuple<T> {
         return len == 0;
     }
 
-    public void orElse(int i, T f) {
-        
+    public T orElse(int i, T defaultValue) {
+        try {
+            if (i >= 0 && i < len) {
+                return elements[i];
+            } else if (i < elements.length) {
+                return defaultValue;
+            } else {
+                T tmp = elements[i];
+                return defaultValue;
+            }
+        } catch (IndexOutOfBoundsException e){
+            System.out.println(e + firstMessage);
+            return defaultValue;
+        }
     }
 }
-
-
-/*Реализуйте класс Tuple - кортеж произвольной длины
-обобщенных элементов (Если создан кортеж длины 5, то
-работа с указанными пятью индексами должна быть доступна
-и валидна, а вот с 6 и более уже нет, то есть кортеж - это
-как список фиксированной длины). Должен быть предоставлен
-конструктор Tuple(int capacity), задающий вместимость кортежа. 
-Реализуйте методы get(int index) - получение по индексу, 
-add(E el) и add(E el, int index) - в первом случае элемент 
-добавляется на первую свободную позицию (перетирать существующие
-значения нельзя), во втором добавляется по индексу - тут
-перетирать значения можно, remove(int index) и remove(T el). 
-Также должны быть методы isEmpty(), orElse(int i, T default). 
-Предусмотрите и обработайте возможные исключения, которые могут 
-возникнуть при работе с кортежем. */
