@@ -2,7 +2,7 @@ package Test2;
 
 public class Test2 {
     public static void main(String[] args) {
-        Tuple<Integer> myTuple = new Tuple<>(7);
+        Tuple<Integer> myTuple = new Tuple<>(5);
         System.out.println(myTuple.isEmpty());
         myTuple.add(23);
         myTuple.add(34);
@@ -23,7 +23,7 @@ public class Test2 {
         myTuple.add(22, 8); // Выкинет исключение
         System.out.println("---------------");
         for (int i = 0; i < myTuple.getLen(); i++) {
-            System.out.println(myTuple.get(i));
+            System.out.print(myTuple.get(i) + " ");
         }
         System.out.println("---------------");
         System.out.println(myTuple.isEmpty());
