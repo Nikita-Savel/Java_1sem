@@ -3,30 +3,20 @@ package hw_iterator;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
+import hw_classes.MyLinkedList.Node;
+
 public class MyIterator<T> implements Iterator<T> {
 
   public Node<T> currentNode;
   
-  @SuppressWarnings("unchecked")
-  public MyIterator(Object head) {
-    this.currentNode = (Node<T>) head;
+  public MyIterator(Node<T> head) {
+    this.currentNode = head;
   }
 
-  public class Node<T> {
-    public T element;
-    public Node<T> prev;
-    public Node<T> next;
-
-    public Node(T element, Node<T> prev, Node<T> next) {
-      this.element = element;
-      this.prev = prev;
-      this.next = next;
-    }
-  }
 
   @Override
   public boolean hasNext() {
-    return currentNode != null;
+    return currentNode != null && currentNode.next != null;
   }
 
   @Override

@@ -15,12 +15,12 @@ public class MyLinkedList<E> implements List<E>, Iterable<E> {
         this.size = 0;
     }
 
-    public class Node<E> {
-        public E element;
-        public Node<E> prev;
-        public Node<E> next;
+    public static class Node<T> {
+        public T element;
+        public Node<T> prev;
+        public Node<T> next;
 
-        public Node(E element, Node<E> prev, Node<E> next) {
+        public Node(T element, Node<T> prev, Node<T> next) {
             this.element = element;
             this.prev = prev;
             this.next = next;

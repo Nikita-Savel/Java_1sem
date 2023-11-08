@@ -133,10 +133,7 @@ public class MyLinkedListTest {
 
         Assertions.assertEquals(expectedList.get(0), myIterator.next());
         Assertions.assertTrue(myIterator.hasPrevious());
-        Assertions.assertEquals(expectedList.get(0), myIterator.previous());
+        Assertions.assertEquals(expectedList.get(1), myIterator.previous());
 
     }
-
-
-
 }
