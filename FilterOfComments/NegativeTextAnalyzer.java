@@ -1,4 +1,4 @@
-package Test2;
+package FilterOfComments;
 
 public class NegativeTextAnalyzer extends KeywordAnalyzer implements TextAnalyzer {
     

@@ -1,8 +1,8 @@
-package Test2;
+package FilterOfComments;
 
 public class TooLongTextAnalyzer implements TextAnalyzer {
 
-    int maxLength;
+    private int maxLength;
     public TooLongTextAnalyzer(int maxLength) {
         this.maxLength = maxLength;
     }

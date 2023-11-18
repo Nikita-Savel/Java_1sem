@@ -1,4 +1,4 @@
-package Test2;
+package FilterOfComments;
 public class Test2 {
     public static void main(String[] args) {
         TextAnalyzer[] analyzers = {

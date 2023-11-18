@@ -1,9 +1,7 @@
-package Test6;
-
-import java.io.IOException;
+package Сorrection;
 
 public class Test6 {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws ArithmeticException, NullPointerException, IndexOutOfBoundsException, Exception {
         try {
             int a = 90;
             int b = 3;
@@ -22,7 +20,7 @@ public class Test6 {
         }
     }
 
-    public static void printSum(int a, int b) throws NullPointerException {
+    public static void printSum(int a, int b) {
         System.out.println(a + b);
     }
 }

@@ -1,4 +1,4 @@
-package Test2;
+package FilterOfComments;
 
 interface TextAnalyzer {
         Label processText(String text);

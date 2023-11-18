@@ -1,4 +1,4 @@
-package Test8;
+package SecondException;
 public class Test8 {
     public static void main(String[] args) {
         try {

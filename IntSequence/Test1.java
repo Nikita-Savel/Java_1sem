@@ -1,4 +1,4 @@
-package Test1;
+package IntSequence;
 
 
 public class Test1 {
@@ -23,12 +23,7 @@ public class Test1 {
                 
                 @Override
                 public int next() {
-                    try {
-                        return values[index++];
-                    } catch (ArrayIndexOutOfBoundsException e) {
-                        System.out.println("Ошибка: Выход за границы массива");
-                        return 0;
-                    }
+                    return values[index++];
                 }
             };
 

@@ -1,4 +1,4 @@
-package Test2;
+package FilterOfComments;
 
 public enum Label {
     OK,

@@ -1,3 +1,4 @@
+package Checking;
 public class Test5 {
     public static void main(String[] args) {
         String login = "NewLogin";
@@ -14,22 +15,31 @@ public class Test5 {
     
     public static boolean validate(String login, String password, String confirmPassword) throws WrongLoginException, WrongPasswordException {
 
+        int maxLength = 20;
+        int AsciiCode0 = 48;
+        int AsciiCode9 = 57;
+        int AsciiCodeA = 65;
+        int AsciiCodeZ = 90;
+        int AsciiCodea = 97;
+        int AsciiCodez = 122;
+        int AsciiCode_ = 95;
+
         boolean loginResult = true;
         for (int i = 0; i < login.length(); i++) {
-            if (!((login.charAt(i) >= 48 && login.charAt(i) <= 57) || (login.charAt(i) >= 65 && login.charAt(i) <= 90) || (login.charAt(i) >= 97 && login.charAt(i) <= 122) || (login.charAt(i) == 95))) {
+            if (!((login.charAt(i) >= AsciiCode0 && login.charAt(i) <= AsciiCode9) || (login.charAt(i) >= AsciiCodeA && login.charAt(i) <= AsciiCodeZ) || (login.charAt(i) >= AsciiCodea && login.charAt(i) <= AsciiCodez) || (login.charAt(i) == AsciiCode_))) {
                 loginResult = false;
             }
         }
-        if (login.length() >= 20 || !loginResult) {
+        if (login.length() >= maxLength || !loginResult) {
             throw new WrongLoginException("Неверный логин");
         }
         boolean passwordResult = true;
         for (int i = 0; i < password.length(); i++) {
-            if (!((password.charAt(i) >= 48 && password.charAt(i) <= 57) || (password.charAt(i) >= 65 && password.charAt(i) <= 90) || (password.charAt(i) >= 97 && password.charAt(i) <= 122) || (password.charAt(i) == 95))) {
+            if (!((password.charAt(i) >= AsciiCode0 && password.charAt(i) <= AsciiCode9) || (password.charAt(i) >= AsciiCodeA && password.charAt(i) <= AsciiCodeZ) || (password.charAt(i) >= AsciiCodea && password.charAt(i) <= AsciiCodez) || (password.charAt(i) == AsciiCode_))) {
                 passwordResult = false;
             }
         }
-        if (password.length() >= 20 || !password.equals(confirmPassword) || !passwordResult) {
+        if (password.length() >= maxLength || !password.equals(confirmPassword) || !passwordResult) {
             throw new WrongPasswordException("Неверный пароль");
         }
         return true;

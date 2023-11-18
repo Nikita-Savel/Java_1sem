@@ -1,4 +1,4 @@
-package Test2;
+package FilterOfComments;
 
 public class SpamAnalyzer extends KeywordAnalyzer implements TextAnalyzer {
     public String[] keywords;

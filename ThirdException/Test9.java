@@ -1,4 +1,4 @@
-package Test9;
+package ThirdException;
 public class Test9 {
     public static void main(String[] args) {
         try {

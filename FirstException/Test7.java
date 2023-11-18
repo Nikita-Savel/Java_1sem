@@ -1,4 +1,4 @@
-package Test7;
+package FirstException;
 public class Test7 {
     public static void main(String[] args) {
         try {

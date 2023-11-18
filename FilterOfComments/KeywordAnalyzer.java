@@ -1,4 +1,4 @@
-package Test2;
+package FilterOfComments;
 public abstract class KeywordAnalyzer implements TextAnalyzer {
     public abstract String[] getKeywords();
  
