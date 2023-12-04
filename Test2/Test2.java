@@ -18,7 +18,7 @@ public class Test2 {
         myTuple.remove(3);
         myTuple.remove(10); // Выкинет исключение
         myTuple.remove(forRemote.get(0));
-
+        
         myTuple.add(445);
         myTuple.add(22, 8); // Выкинет исключение
         System.out.println("---------------");
