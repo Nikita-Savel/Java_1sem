@@ -1,3 +1,5 @@
+package Test5;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
@@ -16,12 +18,11 @@ public class Test5 {
         }
     }
 
-    public static <T, R> List<R> map(List<T> list, Function<T, R> function) {
-        ArrayList<R> result = new ArrayList<>();
-        for (T element : list) {
-            R newElement = function.apply(element);
-            result.add(newElement);
-        }
-        return result;
+    static <R, T> List<R> map(List<T> list, Function<? super T, ? extends R> mapper) { 
+        ArrayList<R> result = new ArrayList<>(); 
+        for (T item : list) { 
+            result.add(mapper.apply(item)); 
+        } 
+        return result; 
     }
 }

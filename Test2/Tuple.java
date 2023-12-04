@@ -13,12 +13,7 @@ public class Tuple<T> {
     }
 
     public T get(int index) {
-        try {
-            return elements[index];
-        } catch (IndexOutOfBoundsException e) {
-            System.out.println(e + firstMessage);
-            return null;
-        }
+        return elements[index];
     }
 
     public int getLen() {
@@ -26,40 +21,25 @@ public class Tuple<T> {
     }
 
     public void add(T el) {
-        try {
-            this.elements[len] = el;
-            len++;
-        } catch (IndexOutOfBoundsException e) {
-            System.out.println(e + secondMessage);
-        }
+        this.elements[len] = el;
+        len++;
     }
 
     public void add(T el, int index) {
-        try {
-            if (this.elements[index] == null) {
-                this.elements[len] = el;
-                len++;
-            } else {
-                this.elements[index] = el;
-            }
-        } catch (IndexOutOfBoundsException e){
-            System.out.println(e + firstMessage);
+        if (this.elements[index] == null) {
+            this.elements[len] = el;
+            len++;
+        } else {
+            this.elements[index] = el;
         }
     }
 
     public void remove(int index) {
-        try {
-            T tmp = elements[index];
-            for (int i = index + 1; i < len; i++) {
-                elements[i - 1] = elements[i];
-            }
-            len--;
-            elements[len] = null;
-            
-            
-        } catch (IndexOutOfBoundsException e) {
-            System.out.println(e + firstMessage);
+        for (int i = index + 1; i < len; i++) {
+            elements[i - 1] = elements[i];
         }
+        len--;
+        elements[len] = null;
     }
 
     public void remove(T el) {
@@ -76,17 +56,9 @@ public class Tuple<T> {
     }
 
     public T orElse(int i, T defaultValue) {
-        try {
-            if (i >= 0 && i < len) {
-                return elements[i];
-            } else if (i < elements.length) {
-                return defaultValue;
-            } else {
-                T tmp = elements[i];
-                return defaultValue;
-            }
-        } catch (IndexOutOfBoundsException e){
-            System.out.println(e + firstMessage);
+        if (i >= 0 && i < len) {
+            return elements[i];
+        } else {
             return defaultValue;
         }
     }
