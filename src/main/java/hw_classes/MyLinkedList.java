@@ -5,14 +5,36 @@ import hw_iterator.MyIterator;
 
 public class MyLinkedList<E> implements List<E>, Iterable<E> {
     
-    public Node<E> head;
-    public Node<E> tail;
-    public int size;
+    private Node<E> head;
+    private Node<E> tail;
+    private int size;
 
-    public MyLinkedList() {
+    private MyLinkedList() {
         this.head = null;
         this.tail = null;
         this.size = 0;
+    }
+
+    public Node<E> getHead() {
+        return head;
+    }
+    public Node<E> getTail() {
+        return tail;
+    }
+ 
+    public int getSize() {
+        return size;
+    }
+ 
+    public void setHead(Node<E> head) {
+        this.head = head;
+    }
+    public void setTail(Node<E> tail) {
+        this.tail = tail;
+    }
+ 
+    public void setSize(int size) {
+        this.size = size;
     }
 
     public static class Node<T> {
