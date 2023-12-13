@@ -1,4 +1,0 @@
-enum TypeOfFeed {
-    CHEAP,
-    EXPENSIVE
-}
